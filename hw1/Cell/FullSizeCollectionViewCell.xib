@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4PC-nz-sSD" customClass="FullSizeCollectionViewCell" customModule="MyVKclient" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="260" height="252"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="260" height="252"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u2V-qj-sgH">
+                        <rect key="frame" x="0.0" y="0.0" width="260" height="252"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="nqJ-ph-nnh"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="u2V-qj-sgH" firstAttribute="leading" secondItem="4PC-nz-sSD" secondAttribute="leading" id="5Q5-8y-Qey"/>
+                <constraint firstItem="u2V-qj-sgH" firstAttribute="top" secondItem="4PC-nz-sSD" secondAttribute="top" id="7jF-Ge-dsq"/>
+                <constraint firstAttribute="bottom" secondItem="u2V-qj-sgH" secondAttribute="bottom" id="PEb-g5-X1s"/>
+                <constraint firstAttribute="trailing" secondItem="u2V-qj-sgH" secondAttribute="trailing" id="WJZ-EP-706"/>
+            </constraints>
+            <size key="customSize" width="260" height="252"/>
+            <connections>
+                <outlet property="imageFullScreen" destination="u2V-qj-sgH" id="mi5-Ag-ljC"/>
+            </connections>
+            <point key="canvasLocation" x="282.60869565217394" y="174.10714285714286"/>
+        </collectionViewCell>
+    </objects>
+</document>
