@@ -6,7 +6,7 @@ import RealmSwift
 import PromiseKit
 
 final class NetworkFriends {
-
+    
     private let scheme = "https://"
     private let host = "api.vk.com/"
     private let token = Session.shared.token
@@ -16,11 +16,11 @@ final class NetworkFriends {
     private var fotosRealm : Results<RealmFotos>!
     private let realm = try! Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
     private var idFriends = [FriendId]()
-
+    
     func pingMyFriends() -> Promise<[FriendId]>{
-
+        
         let (promise, resolver) = Promise<[FriendId]>.pending()
-
+        
         let parametersListFriends: Parameters = [
             "user_id": id,
             "fields": "nickname,photo_200_orig",
@@ -39,9 +39,9 @@ final class NetworkFriends {
                 guard let clearJson = JSON(rawValue: data) else {return}
                 let items = clearJson["response"]["items"].arrayValue
                 let countItems = items.count
-
+                
                 for i in 0 ..< countItems {
-
+                    
                     let firstName = items[i]["first_name"].stringValue
                     let lastName = items[i]["last_name"].stringValue
                     let friendName = firstName + " " + lastName
@@ -56,9 +56,9 @@ final class NetworkFriends {
         }
         return promise
     }
-
+    
     func saveFriensToRealm (friendName name: String, avatar ava : String, idFriend : String){
-
+        
         do {
             let realm = try Realm(configuration: Realm.Configuration(deleteRealmIfMigrationNeeded: true))
             realm.beginWrite()
@@ -69,36 +69,37 @@ final class NetworkFriends {
             print(error)
         }
     }
-
+    
     func  setupFriend() -> [Friend] {
-
+        
         var itogArray = [Friend]()
         itemsRealm = realm.objects(RealmFriend.self)
         fotosRealm = realm.objects(RealmFotos.self)
         let count = itemsRealm.count
-
+        
         for i in 0 ..< count {
-
+            
             let name = itemsRealm[i].friendName
             let ava = itemsRealm[i].avatar
             let idFriend = itemsRealm[i].idFriend
             var arrayFriend = [String]()
             var likes = [String]()
-
+            
             for j in 0 ..< fotosRealm.count{
                 let fot = fotosRealm [j].allFotosOfFriend
                 let like = fotosRealm[j].like
-
+                
                 if itemsRealm[i].idFriend == fotosRealm[j].idFriend {
                     arrayFriend.append(fot)
                     likes.append(like)
                 }
             }
+            
             let friend = Friend(nameFriend: name, avaFriend: ava, fotos: arrayFriend, like: likes, idFriend: idFriend)
             itogArray.append(friend)
         }
         return itogArray
     }
-
+    
 }
 

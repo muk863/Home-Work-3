@@ -26,19 +26,16 @@ extension FullSizeViewController : UICollectionViewDelegate, UICollectionViewDat
         return 1
     }
 
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return friendsArray.count
     }
 
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FullSizeIdentifer, for: indexPath) as? FullSizeCollectionViewCell else {return UICollectionViewCell()}
         cell.imageFullScreen.kf.setImage(with: URL(string: friendsArray[indexPath.item]))
         return cell
     }
 }
-
 
 extension FullSizeViewController : UICollectionViewDelegateFlowLayout {
     

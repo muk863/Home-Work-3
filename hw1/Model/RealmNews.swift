@@ -28,6 +28,5 @@ final class RealmNews: Object  {
         self.likeNewsCount = likeNewsCount
         self.commentsNewsCount = commentsNewsCount
         self.repostNewsCount = repostNewsCount
-
     }
 }

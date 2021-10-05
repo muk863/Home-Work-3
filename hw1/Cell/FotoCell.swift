@@ -39,9 +39,9 @@ class FotoCell: UICollectionViewCell {
         super.awakeFromNib()
         clearCell()
         likeImageView.image = UIImage(systemName: "heart")
-        likeImageView.backgroundColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        likeImageView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         likeCounter.text = String(likeCounterInt)
-        likeCounter.textColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
+        likeCounter.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 
     @IBAction func likeClikButtom(_ sender: UIButton) {

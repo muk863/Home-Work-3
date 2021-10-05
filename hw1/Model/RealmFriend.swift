@@ -15,7 +15,7 @@ final class RealmFriend: Object  {
         self.avatar = avatar
     }
 
-override class func primaryKey () -> String?{
-    return "idFriend"
-}
+    override class func primaryKey () -> String?{
+        return "idFriend"
+    }
 }

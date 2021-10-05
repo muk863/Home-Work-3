@@ -133,7 +133,6 @@ extension MyFriendsViewController : UITableViewDelegate, UITableViewDataSource {
         else {return}
 
         performSegue(withIdentifier: segueFriendsToFoto, sender: cellObject)
-
     }
 
 }

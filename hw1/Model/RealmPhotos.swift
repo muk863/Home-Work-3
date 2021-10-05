@@ -14,8 +14,7 @@ final class RealmFotos: Object  {
         self.idFriend = idFriend
         self.allFotosOfFriend = allFotosOfFriend
         self.idFoto = idFoto
-        self.like = like
-        
+        self.like = like        
     }
     
     override class func primaryKey() -> String? {
