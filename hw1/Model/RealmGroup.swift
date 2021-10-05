@@ -14,10 +14,9 @@ final class RealmGroup: Object  {
         self.idGroup = idGroup
         self.titleGroup = titleGroup
         self.avaGroup = avaGroup
-
     }
 
-override class func primaryKey () -> String?{
-    return "idGroup"
-}
+    override class func primaryKey () -> String?{
+        return "idGroup"
+    }
 }

@@ -10,10 +10,8 @@ class MyFotoCollectionViewCell: UICollectionViewCell {
     }
 
     func clearCell() {
-
         myFotoView.image = nil
     }
-
 
     override func prepareForReuse() {
         clearCell()

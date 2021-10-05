@@ -12,6 +12,4 @@ final class Session{
     
     var token: String = ""
     var userId: String  = ""
-
-  
 }
